@@ -1,0 +1,96 @@
+# ============================================================
+#  MDAM Systems - Sitio web publico
+#  Repositorio: mdam-systems/mdam-systems.github.io  (PUBLICO)
+#  Regla base: aqui solo entra lo que se publica en la web.
+# ============================================================
+
+# ---------- Documentacion y contexto interno (NO publicar) ----------
+Contexto.txt
+Contexto.ORIGINAL.bak.txt
+_privado/
+privado/
+notas/
+borradores/
+*.bak
+*.bak.*
+*.ANTERIOR.*
+*_interno.*
+*-interno.*
+*_confidencial.*
+
+# Cotizaciones, contratos y documentos de gestion
+*.docx
+*.xlsx
+*.pptx
+!assets/**/*.pdf
+
+# ---------- Credenciales y configuracion sensible ----------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+secrets.*
+config.local.*
+
+# ---------- Sistema operativo ----------
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+# Linux
+*~
+.directory
+
+# ---------- Editores e IDE ----------
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+
+# ---------- Dependencias y compilacion ----------
+# (por si mas adelante se agrega un compilador de CSS o un bundler)
+node_modules/
+package-lock.json.bak
+dist/
+build/
+.cache/
+.parcel-cache/
+.sass-cache/
+*.css.map
+*.js.map
+
+# ---------- Logs y temporales ----------
+*.log
+npm-debug.log*
+yarn-error.log*
+*.tmp
+*.temp
+tmp/
+temp/
+~$*
+
+# ---------- Archivos fuente de diseno (pesados, no se publican) ----------
+assets/img/originales/
+assets/img/fuentes/
+*.psd
+*.ai
+*.xcf
+*.fig
+*.sketch
+
+# ---------- Pruebas locales ----------
+prueba*.html
+test*.html
+*.local.html
