@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planes y precios | MDAM Systems</title>
+<meta name="description" content="Planes de MDAM Systems: Esencial, Profesional y Corporativo. Elige según el tamaño de tu operación y activa las verticales que necesites.">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html"><b>MDAM</b> <span>Systems</span></a>
+    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span></button>
+    <nav class="nav">
+      <a href="index.html">Inicio</a>
+      <a href="attend.html">Attend</a>
+      <a href="living.html">Living</a>
+      <a href="fit.html">Fit</a>
+      <a href="planes.html" class="is-active">Planes</a>
+      <a href="contacto.html">Contacto</a>
+      <a class="btn btn--primary" href="registro.html">Crear cuenta</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero hero--product">
+    <div class="container">
+      <h1>Planes que crecen contigo</h1>
+      <p class="hero__lead">
+        Un mismo núcleo, tres tamaños. Empieza por la vertical que necesitas hoy
+        y activa las demás sin migrar datos ni cambiar de plataforma.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="proto">
+        <strong>Prototipo.</strong> Los precios y límites que ves son de ejemplo y se editan en
+        <code>assets/js/planes.js</code>. Ninguna acción crea todavía un suscriptor real.
+      </div>
+
+      <div class="section-head reveal">
+        <span class="eyebrow">Precios</span>
+        <h2>Elige según el tamaño de tu operación</h2>
+        <p>Todos los planes incluyen MDAM Core: marcación, control de accesos, usuarios y reportes.</p>
+        <div class="switch" role="group" aria-label="Periodicidad">
+          <button type="button" data-periodo="mensual" class="is-active">Mensual</button>
+          <button type="button" data-periodo="anual">Anual <span class="tag-save">−20%</span></button>
+        </div>
+      </div>
+
+      <div class="plans" id="plans"></div>
+
+      <p style="text-align:center; margin-top:38px; font-size:.92rem; color:var(--muted)">
+        Precios sin IGV. El plan se factura por suscriptor, no por vertical.<br>
+        ¿Ninguno encaja? <a href="contacto.html">Cuéntanos tu caso</a> y armamos uno a medida.
+      </p>
+
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Cómo funciona</span>
+        <h2>De la solicitud al primer ingreso</h2>
+      </div>
+
+      <div class="grid grid--4">
+        <div class="feature reveal">
+          <span class="feature__num">01</span>
+          <h3>Eliges el plan</h3>
+          <p>Según cuántos trabajadores, socios o unidades vas a administrar.</p>
+        </div>
+        <div class="feature reveal">
+          <span class="feature__num">02</span>
+          <h3>Registras tu empresa</h3>
+          <p>RUC, razón social y los datos del administrador de la cuenta.</p>
+        </div>
+        <div class="feature reveal">
+          <span class="feature__num">03</span>
+          <h3>Recibes tus credenciales</h3>
+          <p>Código de cliente, usuario y clave temporal llegan a tu correo.</p>
+        </div>
+        <div class="feature reveal">
+          <span class="feature__num">04</span>
+          <h3>Configuras y operas</h3>
+          <p>Un asistente te guía para cargar lo mínimo y empezar a marcar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Preguntas frecuentes</span>
+        <h2>Antes de decidir</h2>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="feature reveal">
+          <h3>¿Puedo contratar más de una vertical?</h3>
+          <p>Sí. Comparten el mismo núcleo, así que las personas, accesos y pagos no se duplican. El plan define cuántas puedes activar.</p>
+        </div>
+        <div class="feature reveal">
+          <h3>¿Qué pasa si supero el límite?</h3>
+          <p>El sistema te avisa antes de llegar al tope y puedes subir de plan sin perder información ni interrumpir el servicio.</p>
+        </div>
+        <div class="feature reveal">
+          <h3>¿Hay periodo de prueba?</h3>
+          <p>Sí, 15 días con todas las funciones del plan elegido. No se solicita medio de pago para empezar.</p>
+        </div>
+        <div class="feature reveal">
+          <h3>¿Qué es el código de cliente?</h3>
+          <p>Identifica a tu organización al iniciar sesión. Se ingresa junto con el usuario y la clave, y lo recibes al crear la cuenta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <div class="cta reveal">
+        <h2>Empieza con 15 días de prueba</h2>
+        <p>Sin medio de pago y sin compromiso. Si no te convence, la cuenta simplemente vence.</p>
+        <div class="cta__actions">
+          <a class="btn btn--white" href="registro.html">Crear cuenta</a>
+          <a class="btn btn--light" href="contacto.html">Hablar con alguien</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="logo" href="index.html"><b>MDAM</b> <span>Systems</span></a>
+        <p>Sistemas modulares de gestión de personas, control de accesos y cobranzas.</p>
+      </div>
+      <div>
+        <h4>Productos</h4>
+        <ul>
+          <li><a href="attend.html">MDAM Attend</a></li>
+          <li><a href="living.html">MDAM Living</a></li>
+          <li><a href="fit.html">MDAM Fit</a></li>
+          <li><a href="index.html#core">MDAM Core</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="planes.html">Planes y precios</a></li>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:contacto@mdam.com">contacto@mdam.com</a></li>
+          <li>Lima, Perú</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; <span data-year>2026</span> MDAM Systems S.A.C. Todos los derechos reservados.</span>
+      <span>Hecho en Perú</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/planes.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+(function () {
+  'use strict';
+  var cont = document.getElementById('plans');
+  var periodo = 'mensual';
+
+  function limiteFila(rotulo, valor) {
+    return '<div><dt>' + rotulo + '</dt><dd>' + MDAM.util.formatearLimite(valor) + '</dd></div>';
+  }
+
+  function pintar() {
+    cont.innerHTML = MDAM.PLANES.map(function (p) {
+      var precio = MDAM.util.precioSegunPeriodo(p, periodo);
+      var bloquePrecio = precio === null
+        ? '<div class="plan__precio"><span class="cotizar">A cotizar</span></div>'
+        : '<div class="plan__precio">' +
+            '<span class="moneda">' + p.moneda + '</span>' +
+            '<span class="monto">' + precio.toLocaleString('es-PE') + '</span>' +
+            '<span class="periodo">/ mes</span>' +
+          '</div>';
+
+      var nota = precio === null
+        ? 'Según alcance y volumen'
+        : (periodo === 'anual' ? 'Facturado anualmente' : 'Facturado mes a mes');
+
+      return '' +
+      '<article class="plan ' + (p.destacado ? 'plan--destacado' : '') + ' reveal">' +
+        (p.destacado ? '<span class="plan__flag">Más elegido</span>' : '') +
+        '<h3>' + p.nombre + '</h3>' +
+        '<p class="plan__resumen">' + p.resumen + '</p>' +
+        bloquePrecio +
+        '<p class="plan__nota">' + nota + '</p>' +
+        '<a class="btn ' + (p.destacado ? 'btn--primary' : 'btn--ghost') + '" href="registro.html?plan=' + p.cod + '">' +
+          (precio === null ? 'Solicitar cotización' : 'Empezar prueba') +
+        '</a>' +
+        '<dl class="plan__limites">' +
+          limiteFila('Empresas', p.limites.empresas) +
+          limiteFila('Sucursales', p.limites.sucursales) +
+          limiteFila('Usuarios', p.limites.usuarios) +
+          limiteFila('Personal', p.limites.personal) +
+          limiteFila('Socios', p.limites.socios) +
+        '</dl>' +
+        '<ul class="plan__features">' +
+          p.incluye.map(function (f) { return '<li>' + f + '</li>'; }).join('') +
+          p.noIncluye.map(function (f) { return '<li class="no">' + f + '</li>'; }).join('') +
+        '</ul>' +
+      '</article>';
+    }).join('');
+
+    cont.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  document.querySelectorAll('.switch button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('.switch button').forEach(function (x) { x.classList.remove('is-active'); });
+      b.classList.add('is-active');
+      periodo = b.dataset.periodo;
+      pintar();
+    });
+  });
+
+  pintar();
+})();
+</script>
+</body>
+</html>

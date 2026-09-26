@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crear cuenta | MDAM Systems</title>
+<meta name="description" content="Crea tu cuenta en MDAM Systems y empieza con 15 días de prueba. Sin medio de pago.">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html"><b>MDAM</b> <span>Systems</span></a>
+    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span></button>
+    <nav class="nav">
+      <a href="index.html">Inicio</a>
+      <a href="attend.html">Attend</a>
+      <a href="living.html">Living</a>
+      <a href="fit.html">Fit</a>
+      <a href="planes.html">Planes</a>
+      <a href="contacto.html">Contacto</a>
+      <a class="btn btn--primary is-active" href="registro.html">Crear cuenta</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero hero--product">
+    <div class="container">
+      <h1>Crea tu cuenta</h1>
+      <p class="hero__lead">
+        Quince días de prueba con todas las funciones. No pedimos medio de pago.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="wizard">
+
+        <div class="proto">
+          <strong>Prototipo.</strong> Este asistente no crea suscriptores reales: simula las respuestas
+          del backend. Los puntos de integración están marcados como <code>[INTEGRACION]</code> en
+          <code>assets/js/planes.js</code>.
+        </div>
+
+        <ol class="steps" id="steps">
+          <li data-n="1" class="is-active">Tu organización</li>
+          <li data-n="2">Plan y verticales</li>
+          <li data-n="3">Confirmación</li>
+        </ol>
+
+        <form id="wizard-form" novalidate>
+
+          <!-- ============ PASO 1 ============ -->
+          <div class="step-panel is-active" data-step="1">
+            <div class="wizard__card">
+              <div class="section-head section-head--left" style="margin-bottom:26px">
+                <h2 style="font-size:1.45rem">Datos de tu organización</h2>
+                <p style="font-size:.95rem">Con esto creamos tu suscriptor y la empresa principal.</p>
+              </div>
+
+              <div class="form">
+                <div class="form__row">
+                  <div class="field">
+                    <label for="ruc">RUC</label>
+                    <input type="text" id="ruc" name="ruc" maxlength="11" inputmode="numeric" placeholder="20123456789" required>
+                    <p class="error-msg" id="err-ruc"></p>
+                  </div>
+                  <div class="field">
+                    <label for="razonSocial">Razón social</label>
+                    <input type="text" id="razonSocial" name="razonSocial" placeholder="Mi Empresa S.A.C." required>
+                  </div>
+                </div>
+
+                <div class="form__row">
+                  <div class="field">
+                    <label for="nombreAdmin">Nombre del administrador</label>
+                    <input type="text" id="nombreAdmin" name="nombreAdmin" placeholder="Nombre y apellido" required>
+                  </div>
+                  <div class="field">
+                    <label for="correoAdmin">Correo del administrador</label>
+                    <input type="email" id="correoAdmin" name="correoAdmin" placeholder="nombre@empresa.com" required>
+                  </div>
+                </div>
+
+                <div class="form__row">
+                  <div class="field">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="999 999 999">
+                  </div>
+                  <div class="field">
+                    <label for="sucursal">Nombre de la sede principal</label>
+                    <input type="text" id="sucursal" name="sucursal" placeholder="Sede central" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="wizard__actions">
+                <a class="btn btn--ghost" href="planes.html">Ver los planes</a>
+                <button class="btn btn--primary" type="button" data-next>Continuar</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============ PASO 2 ============ -->
+          <div class="step-panel" data-step="2">
+            <div class="wizard__card">
+              <div class="section-head section-head--left" style="margin-bottom:26px">
+                <h2 style="font-size:1.45rem">¿Qué vas a administrar?</h2>
+                <p style="font-size:.95rem">Elige las verticales y dinos el tamaño; te sugerimos el plan que corresponde.</p>
+              </div>
+
+              <div class="pick" id="pick-verticales"></div>
+
+              <div class="form" style="margin-top:26px">
+                <div class="form__row">
+                  <div class="field">
+                    <label for="cantidad">¿Cuántas personas vas a administrar?</label>
+                    <input type="number" id="cantidad" name="cantidad" min="1" placeholder="120">
+                  </div>
+                  <div class="field">
+                    <label for="plan">Plan</label>
+                    <select id="plan" name="plan"></select>
+                  </div>
+                </div>
+                <p class="form__note" id="sugerencia"></p>
+              </div>
+
+              <div class="wizard__actions">
+                <button class="btn btn--ghost" type="button" data-prev>Atrás</button>
+                <button class="btn btn--primary" type="button" data-next>Continuar</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============ PASO 3 ============ -->
+          <div class="step-panel" data-step="3">
+            <div class="wizard__card">
+              <div class="section-head section-head--left" style="margin-bottom:26px">
+                <h2 style="font-size:1.45rem">Revisa antes de crear</h2>
+                <p style="font-size:.95rem">Verifica los datos: el RUC y la razón social quedarán registrados como tu empresa principal.</p>
+              </div>
+
+              <dl class="resumen" id="resumen"></dl>
+
+              <div class="wizard__actions">
+                <button class="btn btn--ghost" type="button" data-prev>Atrás</button>
+                <button class="btn btn--primary" type="button" id="btn-crear">Crear mi cuenta</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============ RESULTADO ============ -->
+          <div class="step-panel" data-step="4">
+            <div class="wizard__card" style="text-align:center">
+              <div class="ok-mark">✓</div>
+              <h2 style="font-size:1.5rem">Tu cuenta está lista</h2>
+              <p>Guarda estos datos. También los enviamos a tu correo.</p>
+
+              <dl class="creds" id="creds" style="text-align:left"></dl>
+
+              <p class="form__note" style="text-align:left">
+                Al primer ingreso se te pedirá cambiar la clave temporal. El código de cliente
+                identifica a tu organización y se ingresa junto con el usuario y la clave.
+              </p>
+
+              <div style="margin-top:26px">
+                <a class="btn btn--primary" href="#" id="btn-ingresar">Ir a iniciar sesión</a>
+              </div>
+              <p class="form__note" style="margin-top:14px">
+                Pendiente: definir la URL del gateway de producción.
+              </p>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="logo" href="index.html"><b>MDAM</b> <span>Systems</span></a>
+        <p>Sistemas modulares de gestión de personas, control de accesos y cobranzas.</p>
+      </div>
+      <div>
+        <h4>Productos</h4>
+        <ul>
+          <li><a href="attend.html">MDAM Attend</a></li>
+          <li><a href="living.html">MDAM Living</a></li>
+          <li><a href="fit.html">MDAM Fit</a></li>
+          <li><a href="index.html#core">MDAM Core</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="planes.html">Planes y precios</a></li>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:contacto@mdam.com">contacto@mdam.com</a></li>
+          <li>Lima, Perú</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; <span data-year>2026</span> MDAM Systems S.A.C. Todos los derechos reservados.</span>
+      <span>Hecho en Perú</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/planes.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var paso = 1;
+  var datos = {};
+  var steps = document.querySelectorAll('#steps li');
+  var paneles = document.querySelectorAll('.step-panel');
+
+  /* ---------- Pintado de verticales y planes ---------- */
+  document.getElementById('pick-verticales').innerHTML = MDAM.VERTICALES.map(function (v) {
+    return '<label>' +
+      '<input type="checkbox" name="vertical" value="' + v.cod + '">' +
+      '<span class="pick__txt"><strong>' + v.nombre + '</strong><span>' + v.desc + '</span></span>' +
+    '</label>';
+  }).join('');
+
+  var selPlan = document.getElementById('plan');
+  selPlan.innerHTML = MDAM.PLANES.map(function (p) {
+    return '<option value="' + p.cod + '">' + p.nombre + '</option>';
+  }).join('');
+
+  /* Plan preseleccionado desde planes.html (?plan=PRO) */
+  var qs = new URLSearchParams(location.search);
+  if (qs.get('plan')) selPlan.value = qs.get('plan');
+
+  /* ---------- Sugerencia automática de plan ---------- */
+  var inputCantidad = document.getElementById('cantidad');
+  inputCantidad.addEventListener('input', function () {
+    var marcadas = [].slice.call(document.querySelectorAll('input[name=vertical]:checked'));
+    var campo = 'personal';
+    if (marcadas.length === 1 && marcadas[0].value === 'FIT') campo = 'socios';
+
+    var sug = MDAM.util.sugerirPlan(inputCantidad.value, campo);
+    var nota = document.getElementById('sugerencia');
+    if (sug) {
+      selPlan.value = sug.cod;
+      nota.textContent = 'Con ' + inputCantidad.value + ' ' +
+        (campo === 'socios' ? 'socios' : 'personas') +
+        ', el plan ' + sug.nombre + ' es el que corresponde.';
+    } else {
+      nota.textContent = '';
+    }
+  });
+
+  /* ---------- Navegación ---------- */
+  function mostrar(n) {
+    paso = n;
+    paneles.forEach(function (p) { p.classList.toggle('is-active', +p.dataset.step === n); });
+    steps.forEach(function (s, i) {
+      s.classList.toggle('is-active', i + 1 === n);
+      s.classList.toggle('is-done', i + 1 < n);
+    });
+    window.scrollTo({ top: 120, behavior: 'smooth' });
+  }
+
+  function recoger() {
+    var f = document.getElementById('wizard-form');
+    datos = {
+      ruc:          f.ruc.value.trim(),
+      razonSocial:  f.razonSocial.value.trim(),
+      nombreAdmin:  f.nombreAdmin.value.trim(),
+      correoAdmin:  f.correoAdmin.value.trim(),
+      telefono:     f.telefono.value.trim(),
+      sucursal:     f.sucursal.value.trim(),
+      cantidad:     f.cantidad.value,
+      plan:         f.plan.value,
+      verticales:   [].slice.call(document.querySelectorAll('input[name=vertical]:checked')).map(function (c) { return c.value; })
+    };
+    return datos;
+  }
+
+  function validarPaso1() {
+    var f = document.getElementById('wizard-form');
+    var falta = ['ruc', 'razonSocial', 'nombreAdmin', 'correoAdmin', 'sucursal'].filter(function (k) {
+      return !f[k].value.trim();
+    });
+    if (falta.length) {
+      document.getElementById('err-ruc').textContent = 'Completa todos los campos obligatorios.';
+      f[falta[0]].focus();
+      return Promise.resolve(false);
+    }
+    /* [INTEGRACION] validación real de RUC contra el backend */
+    return MDAM.api.validarRuc(f.ruc.value).then(function (r) {
+      document.getElementById('err-ruc').textContent = r.valido ? '' : r.motivo;
+      return r.valido;
+    });
+  }
+
+  function validarPaso2() {
+    var n = document.querySelectorAll('input[name=vertical]:checked').length;
+    if (!n) { alert('Elige al menos una vertical.'); return false; }
+    return true;
+  }
+
+  function pintarResumen() {
+    recoger();
+    var plan = MDAM.PLANES.filter(function (p) { return p.cod === datos.plan; })[0];
+    var verticales = datos.verticales.map(function (c) {
+      return MDAM.VERTICALES.filter(function (v) { return v.cod === c; })[0].nombre;
+    }).join(', ');
+    var precio = MDAM.util.precioSegunPeriodo(plan, 'mensual');
+
+    document.getElementById('resumen').innerHTML =
+      fila('Razón social', datos.razonSocial) +
+      fila('RUC', datos.ruc) +
+      fila('Sede principal', datos.sucursal) +
+      fila('Administrador', datos.nombreAdmin + ' · ' + datos.correoAdmin) +
+      fila('Verticales', verticales) +
+      fila('Plan', plan.nombre) +
+      fila('Prueba gratuita', MDAM.DIAS_PRUEBA + ' días') +
+      '<div class="total"><dt>Al terminar la prueba</dt><dd>' +
+        (precio === null ? 'A cotizar' : plan.moneda + ' ' + precio.toLocaleString('es-PE') + ' / mes') +
+      '</dd></div>';
+  }
+
+  function fila(k, v) { return '<div><dt>' + k + '</dt><dd>' + (v || '—') + '</dd></div>'; }
+
+  document.querySelectorAll('[data-next]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (paso === 1) {
+        b.disabled = true;
+        validarPaso1().then(function (ok) {
+          b.disabled = false;
+          if (ok) mostrar(2);
+        });
+      } else if (paso === 2) {
+        if (validarPaso2()) { pintarResumen(); mostrar(3); }
+      }
+    });
+  });
+
+  document.querySelectorAll('[data-prev]').forEach(function (b) {
+    b.addEventListener('click', function () { mostrar(paso - 1); });
+  });
+
+  /* ---------- Creación ---------- */
+  document.getElementById('btn-crear').addEventListener('click', function () {
+    var btn = this;
+    btn.disabled = true;
+    btn.textContent = 'Creando...';
+
+    /* [INTEGRACION] POST /api/suscriptores */
+    MDAM.api.registrarSuscriptor(recoger()).then(function (r) {
+      document.getElementById('creds').innerHTML =
+        fila('Código de cliente', r.codCliente) +
+        fila('Usuario', r.usuario) +
+        fila('Clave temporal', 'Enviada a ' + datos.correoAdmin) +
+        fila('Prueba hasta', MDAM.util.formatearFecha(r.vence));
+
+      steps.forEach(function (s) { s.classList.add('is-done'); s.classList.remove('is-active'); });
+      paneles.forEach(function (p) { p.classList.toggle('is-active', +p.dataset.step === 4); });
+      window.scrollTo({ top: 120, behavior: 'smooth' });
+      paso = 4;
+
+      btn.disabled = false;
+      btn.textContent = 'Crear mi cuenta';
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
